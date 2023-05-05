@@ -1,0 +1,27 @@
+<div>
+  <app-items [productTitle]="title"></app-items> <!--paso de title por productTitle a app-items-->
+  <form>
+          <table class="table table-bordered">
+              <thead class="thead-dark">
+                  <tr>
+                      <th scope="col">Price</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Add</th>
+                      <th scope="col">View</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let product of productList">
+                      <th scope="row">{{product.price}}</th>
+                      <td>{{ product.description }}</td>
+                      <td>
+                          <button type="button" class="btn btn-primary" (click)="sendToCart(product)">Add toCart</button>
+                      </td>
+                      <td>
+                          <button type="button" class="btn btn-primary">View Details</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+  </form>
+</div>
